@@ -22,6 +22,7 @@ pub struct Assets;
 static EMBEDDED_FONTS: Lazy<HashMap<&str, &str>> = Lazy::new(|| {
     let mut m = HashMap::new();
     m.insert("roboto", "fonts/roboto");
+    m.insert("yahei", "fonts/yahei");
     m
 });
 

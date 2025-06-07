@@ -25,6 +25,7 @@ use genpdfi::{
 #[derive(Debug, PartialEq, Clone, Copy)]
 pub enum MdPdfFont {
     Roboto,
+    Yahei,
 }
 
 impl MdPdfFont {
@@ -32,6 +33,7 @@ impl MdPdfFont {
     pub fn dir(&self) -> &'static str {
         match self {
             MdPdfFont::Roboto => "roboto",
+            MdPdfFont::Yahei => "yahei",
         }
     }
 
@@ -39,6 +41,7 @@ impl MdPdfFont {
     pub fn file(&self) -> &'static str {
         match self {
             MdPdfFont::Roboto => "Roboto",
+            MdPdfFont::Yahei => "Yahei",
         }
     }
 
@@ -49,6 +52,7 @@ impl MdPdfFont {
     /// * `family` - Optional font family name to match
     pub fn find_match(family: Option<&str>) -> MdPdfFont {
         match family.unwrap_or("roboto") {
+            "yahei" | "Yahei" => MdPdfFont::Yahei,
             _ => MdPdfFont::Roboto,
         }
     }
